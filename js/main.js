@@ -1,3 +1,5 @@
+// CRIAR UM COIN FLIP PARA DECIDIR QUEM COMEÇA A JOGAR.
+
 const cell = document.querySelectorAll(".cell"); // <- cria uma constante com uma função que cria um array com as divs pertencentes à class= "cell"
 cell.forEach((element) => element.addEventListener("click", setSymbol)); //<-- loop que adiciona um eventlistener a cada cell => chama a função setSymbol a cada click
 let p1Turn = true; // variavel  q define o turno dos jogadores
@@ -27,29 +29,55 @@ function setSymbol(event) {
     if (targ.innerHTML === "") {
       targ.innerHTML = "X";
       p1Play.push(event.target.id);
-      p1Turn = false
-      p2Turn = true
+      p1Turn = false;
+      p2Turn = true;
+      console.log("wwww");
     }
   } else if (p2Turn === true) {
     if (targ.innerHTML === "") {
       targ.innerHTML = "O";
       p2Play.push(event.target.id);
       p1Turn = true;
+      console.log("wwww");
     }
   }
   let p1Result = winCon.map((element) =>
-  element.every((item) => p1Play.includes(item))
-);
-let p2Result = winCon.map((element) =>
-  element.every((item) => p2Play.includes(item)))
+    element.every((item) => p1Play.includes(item))
+  );
+  let p2Result = winCon.map((element) =>
+    element.every((item) => p2Play.includes(item))
+  );
 
+  if (p1Result.includes(true)) {
+    console.log("Player 1 Wins!");
+  } else if (p2Result.includes(true)) {
+    console.log("Player 2 Wins!");
+  }
+}
 
-if (p1Result.includes(true)) {
-  console.log("Player 1 Wins!");
-}else if(p2Result.includes(true)){
-    console.log("Player 2 Wins!")
+const startBtn = document.querySelector(".start");
+const boardGame = document.querySelector(".board-container");
+const startScreen = document.querySelector(".screen");
+startBtn.addEventListener("click", startGame);
+
+function startGame() {
+  startScreen.classList.add("hidden");
+  boardGame.classList.remove("hidden");
+  console.log(startScreen.className);
 }
+
+const quitGame = document.querySelector(".quit");
+quitGame.addEventListener("click", endGame);
+
+function endGame() {
+  boardGame.classList.add("hidden");
+  startScreen.classList.remove("hidden");
 }
+
+// function GFG_Fun() {
+//   document.getElementsByClassName('child1')[0].
+//   style.visibility = 'hidden';
+//   down.innerHTML = "Element is hidden";
 
 // function winner() {
 //     console.log(p1Play)

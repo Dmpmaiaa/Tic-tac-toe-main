@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style/style.css">
-</head>
-<body>
-<!-- PSEUDOCODE de REGRAS
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mynerve&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <!-- PSEUDOCODE de REGRAS
 -> 2 jogadores
 -> um jogador joga de cada vez
 -> o primeiro a fazer 3 em linha (horizonatal/vertical/diagonal) ganha
 ->
 -->
-
-    <div class="board">
+    <div class="screen">
+      <h1>Tic Tac Toe</h1>
+      <div>
+        <label for="player1">Player One Name: </label>
+        <input type="text" name="player1" required />
+        <label for="player2">Player Two Name: </label>
+        <input type="text" name="player2" required />
+      </div>
+      <button class="start">Start</button>
+    </div>
+    <div class="board-container hidden">
+      <div class="board">
         <div class="cell" id="tl"></div>
         <div class="cell" id="tc"></div>
         <div class="cell" id="tr"></div>
@@ -25,7 +39,9 @@
         <div class="cell" id="bl"></div>
         <div class="cell" id="bc"></div>
         <div class="cell" id="br"></div>
+      </div>
+      <button class="quit">Quit Game!</button>
     </div>
-<script src="js/main.js"></script>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>
