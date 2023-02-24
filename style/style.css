@@ -17,11 +17,26 @@ body {
 
 
 .screen{
-width: 490px;
-height: 490px;
-background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  width: 490px;
+  align-items: center;;
+  height: 490px;
+  background-color: bisque;
 }
 
+.screen > h1 {
+  margin-top: 50px;
+}
+.name-inputs {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
 
 
 

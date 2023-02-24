@@ -20,13 +20,13 @@
 -->
     <div class="screen">
       <h1>Tic Tac Toe</h1>
-      <div>
+      <div class="name-inputs">
         <label for="player1">Player One Name: </label>
         <input type="text" name="player1" required />
         <label for="player2">Player Two Name: </label>
         <input type="text" name="player2" required />
+        <button class="start">Start</button>
       </div>
-      <button class="start">Start</button>
     </div>
     <div class="board-container hidden">
       <div class="board">
@@ -40,7 +40,13 @@
         <div class="cell" id="bc"></div>
         <div class="cell" id="br"></div>
       </div>
-      <button class="quit">Quit Game!</button>
+      <button class="quit">Quit Game</button>
+    </div>
+    
+    <div class="winScreen hidden">
+      <h1> Winner is &lt; Player 1 &gt</h1>
+      <button class="startBtn">Play again</button>
+      <button class='quit'>Exit to menu</button>
     </div>
     <script src="js/main.js"></script>
   </body>
